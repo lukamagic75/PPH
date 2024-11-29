@@ -4,6 +4,90 @@
     "C:\\Users\\yzm\\Desktop\\PPH\\PPH.UnitTest\\PPH.UnitTest.csproj": {}
   },
   "projects": {
+    "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj",
+        "projectName": "PPH.Library",
+        "projectPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj",
+        "packagesPath": "C:\\Users\\yzm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\yzm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AvaloniaInfiniteScrolling.Collection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.3.2, )"
+            },
+            "Google.Cloud.Translate.V3": {
+              "target": "Package",
+              "version": "[3.9.0, )"
+            },
+            "Refractored.MvvmHelpers": {
+              "target": "Package",
+              "version": "[1.6.2, )"
+            },
+            "TencentCloudSDK": {
+              "target": "Package",
+              "version": "[3.0.1131, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\yzm\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\yzm\\Desktop\\PPH\\PPH.UnitTest\\PPH.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -25,7 +109,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj": {
+                "projectPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

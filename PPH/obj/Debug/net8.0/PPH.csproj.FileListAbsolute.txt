@@ -135,3 +135,4 @@ C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Man
 C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\PPH.Library.dll
 C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\PPH.Library.pdb
 C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\TencentCloud.dll
+C:\Users\yzm\Desktop\PPH\PPH\obj\Debug\net8.0\PPH.sourcelink.json
