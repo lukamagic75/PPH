@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AvaloniaInfiniteScrolling.Collection" Version="1.0.1" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+        <PackageReference Include="Google.Cloud.Translate.V3" Version="3.9.0" />
+        <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+        <PackageReference Include="TencentCloudSDK" Version="3.0.1131" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="worddb.sqlite3"/>
+        <EmbeddedResource Include="worddb.sqlite3">
+            <LogicalName>worddb.sqlite3</LogicalName>
+        </EmbeddedResource>
+        <None Remove="todayImage.bin" />
+        <EmbeddedResource Include="todayImage.bin">
+            <LogicalName>todayImage.bin</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

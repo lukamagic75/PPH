@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPH", "PPH\PPH.csproj", "{1C9C5691-9C3E-4D92-A07A-1D153EFFA7DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPH.Library", "PPH.Library\PPH.Library.csproj", "{8E4237D5-D46A-47B6-A004-0C4F7AAC0D7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPH.UnitTest", "PPH.UnitTest\PPH.UnitTest.csproj", "{3F7A3FAD-DDB8-4CC7-BB13-A69EEBAECA11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C9C5691-9C3E-4D92-A07A-1D153EFFA7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9C5691-9C3E-4D92-A07A-1D153EFFA7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9C5691-9C3E-4D92-A07A-1D153EFFA7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9C5691-9C3E-4D92-A07A-1D153EFFA7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4237D5-D46A-47B6-A004-0C4F7AAC0D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4237D5-D46A-47B6-A004-0C4F7AAC0D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4237D5-D46A-47B6-A004-0C4F7AAC0D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4237D5-D46A-47B6-A004-0C4F7AAC0D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7A3FAD-DDB8-4CC7-BB13-A69EEBAECA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7A3FAD-DDB8-4CC7-BB13-A69EEBAECA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7A3FAD-DDB8-4CC7-BB13-A69EEBAECA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7A3FAD-DDB8-4CC7-BB13-A69EEBAECA11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
