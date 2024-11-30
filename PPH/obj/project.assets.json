@@ -1497,6 +1497,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Avalonia": "11.1.4",
           "AvaloniaInfiniteScrolling.Collection": "1.0.1",
           "CommunityToolkit.Mvvm": "8.3.2",
           "Google.Cloud.Translate.V3": "3.9.0",
@@ -3684,19 +3685,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yzm\\.nuget\\packages\\": {}
+    "/Users/yichengxu/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yzm\\Desktop\\PPH\\PPH\\PPH.csproj",
+      "projectUniqueName": "/Users/yichengxu/Desktop/PPH/PPH/PPH.csproj",
       "projectName": "PPH",
-      "projectPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH\\PPH.csproj",
-      "packagesPath": "C:\\Users\\yzm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH\\obj\\",
+      "projectPath": "/Users/yichengxu/Desktop/PPH/PPH/PPH.csproj",
+      "packagesPath": "/Users/yichengxu/.nuget/packages/",
+      "outputPath": "/Users/yichengxu/Desktop/PPH/PPH/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yzm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/yichengxu/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3708,8 +3709,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj": {
-              "projectPath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\PPH.Library.csproj"
+            "/Users/yichengxu/Desktop/PPH/PPH.Library/PPH.Library.csproj": {
+              "projectPath": "/Users/yichengxu/Desktop/PPH/PPH.Library/PPH.Library.csproj"
             }
           }
         }
@@ -3798,7 +3799,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\yzm\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
