@@ -135,6 +135,7 @@ public class WeatherViewModelTests
             {
                 new City { Name = "上海", Id = "101020100" }
             }
+            
         };
         _weatherServiceMock
             .Setup(s => s.SearchCityAsync(It.IsAny<string>(), It.IsAny<string>()))
