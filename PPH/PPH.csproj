@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Folder Include="Assets\QWeatherIcons\" />
         <Folder Include="Models\"/>
         <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
@@ -32,5 +33,9 @@
 
     <ItemGroup>
         <ProjectReference Include="..\PPH.Library\PPH.Library.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Assets/QWeatherIcons/icons/*.png" />
     </ItemGroup>
 </Project>

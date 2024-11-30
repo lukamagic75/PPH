@@ -110,9 +110,13 @@ public class MenuItem {
     private static MenuItem MemoView =>
         new() { Name = "备忘录", View = MenuNavigationConstant.MemoView };
     
+    private static MenuItem WeatherView => 
+        new() { Name = "天气预报", View = MenuNavigationConstant.WeatherView };
+    
     public static IEnumerable<MenuItem> MenuItems { get; } = [
         TodayWordView, TranslateView, 
         QueryWordView, FavoriteWordView, 
-        QuizView, MemoView
+        QuizView, MemoView,
+        WeatherView
     ];
 }
