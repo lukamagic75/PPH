@@ -8,7 +8,7 @@
     <!-- 使用 Grid 容器 -->
     <Grid>
         <!-- 背景图片 -->
-        <Image Source="avares://DailyWordA/Assets/weather_background6.png" Stretch="UniformToFill" />
+        <Image Source="avares://PPH/Assets/weather_background6.png" Stretch="UniformToFill" />
 
         <!-- 滚动区域 -->
         <ScrollViewer>

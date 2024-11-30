@@ -97,7 +97,7 @@ using PPH.Library.Services;
         {
             try
             {
-                var uri = new Uri($"avares://DailyWordA/Assets/QWeatherIcons/icons/{iconCode}.png");
+                var uri = new Uri($"avares://PPH/Assets/QWeatherIcons/icons/{iconCode}.png");
                 CurrentWeatherIcon = new Bitmap(AssetLoader.Open(uri));
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ using PPH.Library.Services;
         {
             try
             {
-                var uri = new Uri($"avares://DailyWordA/Assets/QWeatherIcons/icons/{iconCode}.png");
+                var uri = new Uri($"avares://PPH/Assets/QWeatherIcons/icons/{iconCode}.png");
                 return new Bitmap(AssetLoader.Open(uri));
             }
             catch (Exception ex)
