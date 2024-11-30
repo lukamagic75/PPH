@@ -16,39 +16,42 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PPH
-build_property.ProjectDir = C:\Users\yzm\Desktop\PPH\PPH\
+build_property.ProjectDir = /Users/jiachenghuang/Desktop/PPH/PPH/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/yzm/Desktop/PPH/PPH/App.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/DetailView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/DetailView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/FavoriteWordView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/FavoriteWordView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/InitializationView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/InitializationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/MainView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/MainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/MainWindow.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/QueryWordResultView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/MemoView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/QueryWordView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/QueryWordResultView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/QuizView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/QueryWordView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/TodayWordView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/QuizView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/yzm/Desktop/PPH/PPH/Views/TranslateView.axaml]
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/TodayWordView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/TranslateView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

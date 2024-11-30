@@ -18,12 +18,18 @@ namespace PPH.UnitTest.ViewModels
             var favoriteStorageMock = new Mock<IFavoriteWordStorage>();
             favoriteStorageMock.Setup(p => p.IsInitialized).Returns(false);  // Mock FavoriteWordStorage 为 false
             var mockFavoriteStorage = favoriteStorageMock.Object;
+            
+            var memoStorageMock = new Mock<IMemoStorage>();
+            memoStorageMock.Setup(p => p.IsInitialized).Returns(false);
+            var mockMemoStorage = memoStorageMock.Object;
+
 
             var rootNavigationServiceMock = new Mock<IRootNavigationService>();
             var mockRootNavigationService = rootNavigationServiceMock.Object;
-
+            
+            
             var mainWindowViewModel = new MainWindowViewModel(
-                mockWordStorage, mockRootNavigationService, mockFavoriteStorage);
+                mockWordStorage, mockMemoStorage, mockRootNavigationService, mockFavoriteStorage);
 
             // Act
             mainWindowViewModel.OnInitialized();  // 调用同步方法 OnInitialized
@@ -49,9 +55,14 @@ namespace PPH.UnitTest.ViewModels
 
             var rootNavigationServiceMock = new Mock<IRootNavigationService>();
             var mockRootNavigationService = rootNavigationServiceMock.Object;
+            
+            var memoStorageMock = new Mock<IMemoStorage>();
+            memoStorageMock.Setup(p => p.IsInitialized).Returns(false);
+            var mockMemoStorage = memoStorageMock.Object;
+
 
             var mainWindowViewModel = new MainWindowViewModel(
-                mockWordStorage, mockRootNavigationService, mockFavoriteStorage);
+                mockWordStorage, mockMemoStorage, mockRootNavigationService, mockFavoriteStorage);
 
             // Act
             mainWindowViewModel.OnInitialized();  // 调用同步方法 OnInitialized

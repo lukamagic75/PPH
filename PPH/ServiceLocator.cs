@@ -65,6 +65,8 @@ public class ServiceLocator {
     
     public QuizViewModel QuizViewModel =>
         _serviceProvider.GetRequiredService<QuizViewModel>();
+    public MemoViewModel MemoViewModel => 
+        _serviceProvider.GetRequiredService<MemoViewModel>();
     
     public ServiceLocator() {
         var serviceCollection = new ServiceCollection();
@@ -79,6 +81,7 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<ITodayImageService, BingImageService>();
         serviceCollection.AddSingleton<ITodayImageStorage, TodayImageStorage>();
         serviceCollection.AddSingleton<IFavoriteWordStorage, FavoriteWordStorage>();
+        serviceCollection.AddSingleton<IMemoStorage, MemoStorage>();
         
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<TodayWordViewModel>();
@@ -90,6 +93,7 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<QueryWordResultViewModel>();
         serviceCollection.AddSingleton<FavoriteWordViewModel>();
         serviceCollection.AddSingleton<QuizViewModel>();
+        serviceCollection.AddSingleton<MemoViewModel>();
 
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }

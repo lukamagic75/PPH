@@ -107,8 +107,12 @@ public class MenuItem {
     private static MenuItem QuizView =>
         new() { Name = "单词测验", View = MenuNavigationConstant.QuizView };
     
+    private static MenuItem MemoView =>
+        new() { Name = "备忘录", View = MenuNavigationConstant.MemoView };
+    
     public static IEnumerable<MenuItem> MenuItems { get; } = [
         TodayWordView, TranslateView, 
-        QueryWordView, FavoriteWordView, QuizView
+        QueryWordView, FavoriteWordView, 
+        QuizView, MemoView
     ];
 }

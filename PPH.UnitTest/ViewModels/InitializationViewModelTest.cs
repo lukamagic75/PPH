@@ -15,6 +15,10 @@ namespace PPH.UnitTest.ViewModels
             var wordStorageMock = new Mock<IWordStorage>();
             wordStorageMock.Setup(p => p.IsInitialized).Returns(false);
             var mockWordStorage = wordStorageMock.Object;
+            
+            var memoStorageMock = new Mock<IMemoStorage>();
+            memoStorageMock.Setup(p => p.IsInitialized).Returns(false);
+            var mockMemoStorage = memoStorageMock.Object;
 
             var favoriteStorageMock = new Mock<IFavoriteWordStorage>();
             favoriteStorageMock.Setup(p => p.IsInitialized).Returns(false);
@@ -23,8 +27,9 @@ namespace PPH.UnitTest.ViewModels
             var rootNavigationServiceMock = new Mock<IRootNavigationService>();
             var mockRootNavigationService = rootNavigationServiceMock.Object;
 
+            
             var initializationViewModel = new InitializationViewModel(
-                mockWordStorage, mockRootNavigationService, mockFavoriteStorage);
+                mockWordStorage, mockMemoStorage, mockRootNavigationService, mockFavoriteStorage);
 
             // Act
             await initializationViewModel.OnInitializedAsync();
@@ -49,6 +54,10 @@ namespace PPH.UnitTest.ViewModels
             var wordStorageMock = new Mock<IWordStorage>();
             wordStorageMock.Setup(p => p.IsInitialized).Returns(true);
             var mockWordStorage = wordStorageMock.Object;
+            
+            var memoStorageMock = new Mock<IMemoStorage>();
+            memoStorageMock.Setup(p => p.IsInitialized).Returns(false);
+            var mockMemoStorage = memoStorageMock.Object;
 
             var favoriteStorageMock = new Mock<IFavoriteWordStorage>();
             favoriteStorageMock.Setup(p => p.IsInitialized).Returns(true);
@@ -58,7 +67,7 @@ namespace PPH.UnitTest.ViewModels
             var mockRootNavigationService = rootNavigationServiceMock.Object;
 
             var initializationViewModel = new InitializationViewModel(
-                mockWordStorage, mockRootNavigationService, mockFavoriteStorage);
+                mockWordStorage,mockMemoStorage, mockRootNavigationService, mockFavoriteStorage);
 
             // Act
             await initializationViewModel.OnInitializedAsync();

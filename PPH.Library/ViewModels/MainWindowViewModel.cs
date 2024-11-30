@@ -6,13 +6,16 @@ namespace PPH.Library.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase {
     private readonly IWordStorage _wordStorage;
+    private readonly IMemoStorage _memoStorage;
     private readonly IRootNavigationService _rootNavigationService;
     private readonly IFavoriteWordStorage _favoriteWordStorage;
 
     public MainWindowViewModel(IWordStorage wordStorage, 
+        IMemoStorage memoStorage,
         IRootNavigationService rootNavigationService,
         IFavoriteWordStorage favoriteWordStorage) {
         _wordStorage = wordStorage;
+        _memoStorage = memoStorage;
         _rootNavigationService = rootNavigationService;
         _favoriteWordStorage = favoriteWordStorage;
         
@@ -30,7 +33,7 @@ public class MainWindowViewModel : ViewModelBase {
     public ICommand OnInitializedCommand { get; }
 
     public void OnInitialized() {
-        if (!_wordStorage.IsInitialized || !_favoriteWordStorage.IsInitialized) {
+        if (!_wordStorage.IsInitialized || !_favoriteWordStorage.IsInitialized || !_memoStorage.IsInitialized) {
             _rootNavigationService.NavigateTo(RootNavigationConstant.InitializationView);
         }
         else {
