@@ -47,28 +47,21 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="3* Auto Auto" Margin="5">
-                            <TextBlock Text="{Binding Content}" 
-                                       FontSize="16" 
-                                       Foreground="White"
-                                       Grid.Column="0" 
-                                       VerticalAlignment="Center" 
-                                       TextTrimming="CharacterEllipsis" />
+                            <TextBox Text="{Binding Content, Mode=TwoWay}"
+                                     FontSize="16"
+                                     Foreground="White"
+                                     Background="Transparent"
+                                     BorderBrush="Transparent"
+                                     Grid.Column="0"
+                                     VerticalAlignment="Center"
+                                      />
                             <Button Content="删除" Command="{Binding DataContext.DeleteMemoCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
-                                    CommandParameter="{Binding}" 
-                                    Background="#FF4C4C" 
-                                    Foreground="White" 
+                                    CommandParameter="{Binding}"
+                                    Background="#FF4C4C"
+                                    Foreground="White"
                                     Width="80"
-                                    Margin="10,0,5,0" Grid.Column="1" 
+                                    Margin="10,0,5,0" Grid.Column="1"
                                     HorizontalAlignment="Right" />
-                            <!-- <Button Content="编辑" -->
-                            <!--         Command="{Binding DataContext.EditMemoCommand, RelativeSource={RelativeSource AncestorType=ListBox}}" -->
-                            <!--         CommandParameter="{Binding}" -->
-                            <!--         Background="#FFC107" -->
-                            <!--         Foreground="White" -->
-                            <!--         Width="80" -->
-                            <!--         Margin="5,0,0,0" -->
-                            <!--         Grid.Column="2" -->
-                            <!--         HorizontalAlignment="Right" /> -->
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -57,7 +57,7 @@
                                FontWeight="Bold"
                                HorizontalAlignment="Center"
                                Foreground="WhiteSmoke" />
-                    <Image Source="{Binding CurrentWeatherIcon}" Width="50" Height="50" />
+                    <!-- <Image Source="{Binding CurrentWeatherIcon}" Width="50" Height="50" /> -->
                 </StackPanel>
 
                 <!-- 主信息区域 -->
@@ -76,7 +76,7 @@
                                                 <TextBlock Text="{Binding FxDate}" FontSize="18" Foreground="#CCCCCC" Width="120" />
                                                 <!-- 天气描述 -->
                                                 <TextBlock Text="{Binding TextDay}" FontSize="20" FontWeight="Bold" Foreground="White" Width="80" />
-                                                <Image Source="{Binding IconBitmap}" Width="30" Height="30" />
+                                                <!-- <Image Source="{Binding IconBitmap}" Width="30" Height="30" /> -->
                                                 <!-- 温度范围 -->
                                                 <TextBlock Text="{Binding TempMin}" FontSize="18" FontWeight="Bold" Foreground="#CCCCCC" />
                                                 <TextBlock Text="~" FontSize="18" Foreground="#CCCCCC" />
@@ -120,7 +120,7 @@
                                                                    FontSize="14" 
                                                                    Foreground="#CCCCCC" 
                                                                    HorizontalAlignment="Center" />
-                                                        <Image Source="{Binding IconBitmap}" Width="30" Height="30" />
+                                                        <!-- <Image Source="{Binding IconBitmap}" Width="30" Height="30" /> -->
                                                         <TextBlock Text="{Binding Temp, StringFormat='{}{0}°C'}" 
                                                                    FontSize="16" 
                                                                    FontWeight="Bold" 
