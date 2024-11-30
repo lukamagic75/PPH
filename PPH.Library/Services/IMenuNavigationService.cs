@@ -14,4 +14,6 @@ public static class MenuNavigationConstant {
     public const string TranslateView = nameof(TranslateView);
     
     public const string QuizView = nameof(QuizView); 
+    
+    public const string WeatherView= nameof(WeatherView);//天气预报
 }
