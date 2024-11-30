@@ -46,7 +46,7 @@
                             <ia:EventTriggerBehavior EventName="Tapped">
                                 <ia:InvokeCommandAction
                                     Command="{Binding DataContext.ShowWordDetailCommand, ElementName=TheWordFavoriteView}"
-                                    CommandParameter="{Binding WordObject}">
+                                    CommandParameter="{Binding ObjectWord}">
                                 </ia:InvokeCommandAction>
                             </ia:EventTriggerBehavior>
                         </i:Interaction.Behaviors>
