@@ -5,36 +5,57 @@
              xmlns:lvm="using:PPH.Library.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PPH.Views.QueryWordView"
-             DataContext="{Binding QueryWordViewModel, Source={StaticResource ServiceLocator}}"
-             >
+             DataContext="{Binding QueryWordViewModel, Source={StaticResource ServiceLocator}}">
     <StackPanel Margin="20">
+        <!-- 查找方式选择 -->
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center">
-            <Label Margin="0 15 10 5" 
-                   Content="选择查找方式：" FontSize="18" Foreground="#3498DB">
-            </Label>
+            <Label Margin="0 15 10 5"
+                   Content="选择查找方式："
+                   FontSize="20"
+                   VerticalAlignment="Center"
+                   Foreground="#3498DB"/>
             <ComboBox Margin="8, 12, 4, 4"
                       ItemsSource="{x:Static lvm:FilterType.FilterTypes}"
                       SelectedItem="{Binding Filter.Type}"
                       DisplayMemberBinding="{Binding Name}"
-                      Width="200"
-            />
+                      Width="220"
+                      FontSize="18"
+                      VerticalAlignment="Center" />
         </StackPanel>
-        
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Margin="12">
-            <Border Background="#3498DB">
-            </Border>
-            <TextBox Margin="4,0,0,4"
+
+        <!-- 蓝色线和输入框分开处理 -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="12">
+            <!-- 蓝色线 -->
+            <Border Background="#3498DB"
+                    Height="2"
+                    Width="500"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+
+            <!-- 输入框和水印 -->
+            <TextBox Margin="0, 8, 0, 4"
                      Text="{Binding Filter.QueryText}"
                      Watermark="{Binding CommentText}"
                      Width="500"
-                     />
+                     FontSize="18"
+                     VerticalAlignment="Center"
+                     Height="40"/>
         </StackPanel>
-        
-        <Button Margin="12"
+
+        <!-- 查询按钮 -->
+        <Button Margin="20, 16, 20, 20"
                 Content="查询"
-                Command="{Binding QueryCommand}" />
+                Command="{Binding QueryCommand}"
+                HorizontalAlignment="Center"
+                FontSize="20"
+                Height="50"
+                Width="220"
+                Background="#3498DB"
+                Foreground="White"
+                BorderBrush="#3498DB"
+                BorderThickness="1"
+                VerticalAlignment="Center">
+        </Button>
     </StackPanel>
 </UserControl>

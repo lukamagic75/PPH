@@ -20,133 +20,132 @@
    
        <ScrollViewer>
         <StackPanel Margin="8">
-            <Label FontSize="28"
+            <!-- 单词显示 -->
+            <Label FontSize="30"
                    Margin="0,0,0,8"
                    HorizontalAlignment="Center"
                    Content="{Binding CurrentWord.Word}" />
-            <Label FontSize="22"
+            
+            <!-- 音标 -->
+            <Label FontSize="20"
                    Margin="0,0,0,8"
                    HorizontalAlignment="Center"
                    Content="{Binding CurrentWord.Accent}" />
-            <!-- 注意下面的StackPanel内部是水平布局 -->
+
+            <!-- 中文释义 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8">
-                <Label FontSize="18"
-                       Content="中文释义： " />
-                <Label FontSize="18"
+                <Label FontSize="20" 
+                       VerticalAlignment="Center"
+                       Content="中文释义：" />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
                        Content="{Binding CurrentWord.CnMeaning}" />
             </StackPanel>
+
+            <!-- 英文释义 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8">
-                   <Label FontSize="18"
-                          Content="英文释义： " />
-                   <TextBlock FontSize="16"
-                              Margin="0,0,0,8"
-                              HorizontalAlignment="Center"
-                              Text="{Binding CurrentWord.EnMeaning}"
-                              Width="600"
-                              TextWrapping="Wrap"
-                   />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="英文释义：" />
+                <TextBlock FontSize="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding CurrentWord.EnMeaning}"
+                           Width="600"
+                           TextWrapping="Wrap" />
             </StackPanel>
+
+            <!-- 例句 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8">
-                   <Label FontSize="18"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="例句：" />
-                   <TextBlock FontSize="16"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Text="{Binding CurrentWord.Sentence}"
-                          Width="600"
-                          TextWrapping="Wrap"
-                          />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="例句：" />
+                <TextBlock FontSize="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding CurrentWord.Sentence}"
+                           Width="600"
+                           TextWrapping="Wrap" />
             </StackPanel>
+
+            <!-- 例句翻译 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8">
-                   <Label FontSize="18"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="例句翻译：" />
-                   <TextBlock FontSize="16"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Text="{Binding CurrentWord.SentenceTrans}"
-                          Width="500"
-                          TextWrapping="Wrap"
-                          />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="例句翻译：" />
+                <TextBlock FontSize="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding CurrentWord.SentenceTrans}"
+                           Width="500"
+                           TextWrapping="Wrap" />
             </StackPanel>
-            
+
+            <!-- 词根 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8"
-                        IsVisible="{Binding CanShowEtyma}"
-            >
-                   <Label FontSize="18"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="词根：" />
-                   <Label FontSize="16"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="{Binding CurrentWord.Etyma}" />
+                        IsVisible="{Binding CanShowEtyma}">
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="词根：" />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="{Binding CurrentWord.Etyma}" />
             </StackPanel>
+
+            <!-- 相关词组 -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,8"
-                        IsVisible="{Binding CanShowPhrase}"
-            >
-                   <Label FontSize="18"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="相关词组搭配：" />
-                   <Label FontSize="18"
-                          Margin="0,0,0,8"
-                          HorizontalAlignment="Center"
-                          Content="{Binding CurrentWord.Phrase}" />
+                        IsVisible="{Binding CanShowPhrase}">
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="相关词组搭配：" />
+                <Label FontSize="20"
+                       VerticalAlignment="Center"
+                       Content="{Binding CurrentWord.Phrase}" />
             </StackPanel>
-            
+
+            <!-- 加载进度 -->
             <StackPanel Margin="0,0,0,8"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal"
                         IsVisible="{Binding IsLoading}">
-                   <ProgressBar Width="30"
-                                Height="30"
-                                IsIndeterminate="True"
-                                Theme="{DynamicResource ProgressRing}"
-                                ShowProgressText="False" />
-                   <TextBlock Text="正在载入"
-                              FontSize="12"
-                              VerticalAlignment="Center"
-                              Margin="8,0,0,0" />
+                <ProgressBar Width="30"
+                             Height="30"
+                             IsIndeterminate="True"
+                             Theme="{DynamicResource ProgressRing}"
+                             ShowProgressText="False" />
+                <TextBlock Text="正在载入"
+                           FontSize="20"
+                           VerticalAlignment="Center"
+                           Margin="8,0,0,0" />
             </StackPanel>
+
+            <!-- 收藏切换 -->
             <StackPanel Margin="0,5,0,12"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal"
                         IsVisible="{Binding IsLoading, Converter={StaticResource NegativeConverter}}">
-                   <ToggleSwitch OnContent="已收藏"
-                                 OffContent="未收藏"
-                                 IsChecked="{Binding Favorite.IsFavorite}"
-                                 Command="{Binding FavoriteSwitchCommand}">
-                          <!-- IsToggled="{Binding Favorite.IsFavorite}"> -->
-                          <!-- <Switch.Behaviors> -->
-                          <!--     <b:MauiEventHandlerBehavior EventName="Toggled"> -->
-                          <!--         <b:MauiActionCollection> -->
-                          <!--             <b:MauiInvokeCommandAction -->
-                          <!--                 Command="{Binding FavoriteToggledCommand}" /> -->
-                          <!--         </b:MauiActionCollection> -->
-                          <!--     </b:MauiEventHandlerBehavior> -->
-                          <!-- </Switch.Behaviors> -->
-                   </ToggleSwitch>
+                <ToggleSwitch OnContent="已收藏"
+                              OffContent="未收藏"
+                              IsChecked="{Binding Favorite.IsFavorite}"
+                              Command="{Binding FavoriteSwitchCommand}" />
             </StackPanel>
+
+            <!-- 查找按钮 -->
             <Button HorizontalAlignment="Center"
                     Content="在本地数据库中查找"
-                    Command="{Binding QueryCommand}"
-            />
+                    Command="{Binding QueryCommand}"/>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

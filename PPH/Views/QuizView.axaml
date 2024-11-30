@@ -9,160 +9,141 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PPH.Views.QuizView"
              x:Name="TheQuizView"
-             d:DataContext="{Binding QuizViewModel, Source={StaticResource ServiceLocator}}"
-             >
-    
+             d:DataContext="{Binding QuizViewModel, Source={StaticResource ServiceLocator}}">
+
     <UserControl.Resources>
-           <lc:EqualStringToBoolConverter x:Key="EqualStringToBoolConverter"></lc:EqualStringToBoolConverter>
+        <lc:EqualStringToBoolConverter x:Key="EqualStringToBoolConverter" />
     </UserControl.Resources>
-    
-    <StackPanel Margin="8"
-                HorizontalAlignment="Center">
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center">
+
+    <StackPanel Margin="8" HorizontalAlignment="Center">
+        <!-- 切换测验模式的部分 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Label Margin="0 15 10 5" 
-                   Content="切换测验模式：" FontSize="18" 
-                   FontWeight="Bold">
-            </Label>
-            <Button HorizontalAlignment="Center"
-                    IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
-                    Margin="0,10,0,8"
-                    Content="中文选词"
-                    FontSize="17"
-                    Command="{Binding SelectModeCommand}"
-                    CommandParameter="{Binding QuizModes[1]}"
-                    VerticalAlignment="Center" />
-            <Button HorizontalAlignment="Center"
-                    IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
-                    Margin="0,10,0,8"
-                    Content="英文选义"
-                    FontSize="17"
-                    Command="{Binding SelectModeCommand}"
-                    CommandParameter="{Binding QuizModes[0]}"
-                    VerticalAlignment="Center" />
+                   Content="切换测验模式：" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+
+            <!-- 使用 ComboBox 替换按钮，调整对齐 -->
+            <ComboBox HorizontalAlignment="Center"
+                      FontSize="17"
+                      Width="200"
+                      VerticalAlignment="Center"
+                      SelectedItem="{Binding SelectedMode}"
+                      ItemsSource="{Binding QuizModes}" />
         </StackPanel>
-        
+
+        <!-- 英文选义部分 -->
         <StackPanel IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
+                                     Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
                     HorizontalAlignment="Center">
             <Label Content="英文选义"
-               HorizontalAlignment="Center"
-               Foreground="#3498DB"
-               FontSize="22"
-               FontWeight="Bold"
-               Margin="0, 10, 0, 10" />
+                   HorizontalAlignment="Center"
+                   Foreground="#3498DB"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0, 10, 0, 10" />
             <Label Content="{Binding CorrectWord.Word}"
                    HorizontalAlignment="Center"
                    FontSize="28"
                    Margin="0, 0, 0, 12"
-                   FontWeight="Bold"/> 
-            
+                   FontWeight="Bold" /> 
+
             <StackPanel HorizontalAlignment="Center">
-                <Label Content="中文释义选项："
-                       HorizontalAlignment="Left"
-                       FontSize="20"
-                       Margin="0, 5, 0, 8"></Label>
                 <RadioButton GroupName="OptionGroup"
                              IsEnabled="{Binding !HasAnswered}"
                              IsChecked="False"
                              Content="{Binding QuizOptions[0].CnMeaning}"
-                             FontSize="22"
+                             FontSize="24"  
                              Margin="0, 0, 0, 8"
                              Width="300"
                              Command="{Binding RadioCheckedCommand}"
-                             CommandParameter="{Binding QuizOptions[0]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[1].CnMeaning}"
-                                FontSize="22"
-                                Margin="0, 0, 0, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[1]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[2].CnMeaning}"
-                                FontSize="22"
-                                Margin="0, 0, 5, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[2]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[3].CnMeaning}"
-                                FontSize="22"
-                                Margin="0, 0, 5, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[3]}" />
+                             CommandParameter="{Binding QuizOptions[0]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[1].CnMeaning}"
+                             FontSize="24"   
+                             Margin="0, 0, 0, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[1]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[2].CnMeaning}"
+                             FontSize="24"  
+                             Margin="0, 0, 5, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[2]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[3].CnMeaning}"
+                             FontSize="24"   
+                             Margin="0, 0, 5, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[3]}" />
             </StackPanel>
         </StackPanel>
-        
+
+        <!-- 中文选词部分 -->
         <StackPanel IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
+                                     Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
                     HorizontalAlignment="Center">
             <Label Content="中文选词"
-               HorizontalAlignment="Center"
-               Foreground="#3498DB"
-               FontSize="22"
-               FontWeight="Bold"
-               Margin="0, 10, 0, 10" />
-            <TextBlock Text="{Binding CorrectWord.CnMeaning}"
                    HorizontalAlignment="Center"
-                   TextWrapping="Wrap"
-                   FontSize="24"
-                   Margin="0, 0, 0, 12"
-                   FontWeight="Bold"/> 
-            
+                   Foreground="#3498DB"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0, 10, 0, 10" />
+            <TextBlock Text="{Binding CorrectWord.CnMeaning}"
+                      HorizontalAlignment="Center"
+                      TextWrapping="Wrap"
+                      FontSize="24"
+                      Margin="0, 0, 0, 12"
+                      FontWeight="Bold" />
+
             <StackPanel HorizontalAlignment="Center">
-                <Label Content="英文单词选项："
-                       HorizontalAlignment="Left"
-                       FontSize="20"
-                       Margin="0, 5, 0, 8"></Label>
                 <RadioButton GroupName="OptionGroup"
                              IsEnabled="{Binding !HasAnswered}"
                              IsChecked="False"
                              Content="{Binding QuizOptions[0].Word}"
-                             FontSize="22"
+                             FontSize="24" 
                              Margin="0, 0, 0, 8"
                              Width="300"
                              Command="{Binding RadioCheckedCommand}"
-                             CommandParameter="{Binding QuizOptions[0]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[1].Word}"
-                                FontSize="22"
-                                Margin="0, 0, 0, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[1]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[2].Word}"
-                                FontSize="22"
-                                Margin="0, 0, 5, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[2]}" /> 
-                   <RadioButton GroupName="OptionGroup"
-                                IsEnabled="{Binding !HasAnswered}"
-                                IsChecked="False"
-                                Content="{Binding QuizOptions[3].Word}"
-                                FontSize="22"
-                                Margin="0, 0, 5, 8"
-                                Width="300"
-                                Command="{Binding RadioCheckedCommand}"
-                                CommandParameter="{Binding QuizOptions[3]}" />
+                             CommandParameter="{Binding QuizOptions[0]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[1].Word}"
+                             FontSize="24"  
+                             Margin="0, 0, 0, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[1]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[2].Word}"
+                             FontSize="24"  
+                             Margin="0, 0, 5, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[2]}" />
+                <RadioButton GroupName="OptionGroup"
+                             IsEnabled="{Binding !HasAnswered}"
+                             IsChecked="False"
+                             Content="{Binding QuizOptions[3].Word}"
+                             FontSize="24" 
+                             Margin="0, 0, 5, 8"
+                             Width="300"
+                             Command="{Binding RadioCheckedCommand}"
+                             CommandParameter="{Binding QuizOptions[3]}" />
             </StackPanel>
         </StackPanel>
-        
+
+        <!-- 提交按钮 -->
         <Button HorizontalAlignment="Center"
                 Margin="0,20,0,8"
                 Content="提交"
@@ -171,74 +152,61 @@
                 FontSize="18"
                 Command="{Binding CommitCommand}"
                 VerticalAlignment="Center" />
-        
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Margin="5"
-                    IsVisible="{Binding HasAnswered}">
-            <Label Content="您选择的选项是："
-                   FontSize="18"
-                   Margin="0, 0, 5, 8"/>
+
+        <!-- 其他控件保持不变 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5" IsVisible="{Binding HasAnswered}">
+            <Label Content="您选择的选项是：" FontSize="18" Margin="0, 0, 5, 8" />
             <TextBlock Text="{Binding SelectedOption.CnMeaning}"
-                       IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
-                   FontSize="16"
-                   TextWrapping="Wrap"
-                   Margin="0, 0, 0, 8"/>
+                       IsVisible="{Binding SelectedMode, Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
+                       FontSize="16"
+                       TextWrapping="Wrap"
+                       Margin="0, 0, 0, 8" />
             <TextBlock Text="{Binding SelectedOption.Word}"
-                       IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
-                   FontSize="18"
-                   Width="200"
-                   TextWrapping="Wrap"
-                   Margin="0, 0, 0, 8"/>
+                       IsVisible="{Binding SelectedMode, Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
+                       FontSize="18"
+                       Width="200"
+                       TextWrapping="Wrap"
+                       Margin="0, 0, 0, 8" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Margin="5"
-                    IsVisible="{Binding HasAnswered}">
-            <Label Content="正确的选项是："
-                   FontSize="18"
-                   Margin="0, 0, 5, 8"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5" IsVisible="{Binding HasAnswered}">
+            <Label Content="正确的选项是：" FontSize="18" Margin="0, 0, 5, 8" />
             <TextBlock Text="{Binding CorrectWord.CnMeaning}"
-                       IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
-                   FontSize="16"
-                   
-                   TextWrapping="Wrap"
-                   Margin="0, 0, 0, 8"/>
+                       IsVisible="{Binding SelectedMode, Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
+                       FontSize="16"
+                       TextWrapping="Wrap"
+                       Margin="0, 0, 0, 8" />
             <TextBlock Text="{Binding CorrectWord.Word}"
-                       IsVisible="{Binding SelectedMode, 
-                            Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
-                   FontSize="18"
-                   Width="200"
-                   TextWrapping="Wrap"
-                   Margin="0, 0, 0, 8"/>
+                       IsVisible="{Binding SelectedMode, Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='中文选词'}"
+                       FontSize="18"
+                       Width="200"
+                       TextWrapping="Wrap"
+                       Margin="0, 0, 0, 8" />
         </StackPanel>
+
         <TextBlock Text="{Binding ResultText}"
                    IsVisible="{Binding HasAnswered}"
                    FontSize="20"
                    Foreground="#3498DB"
                    FontWeight="Bold"
                    Margin="5"
-                   HorizontalAlignment="Center"/>
-        
+                   HorizontalAlignment="Center" />
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-               <Button HorizontalAlignment="Center"
-                       IsVisible="{Binding HasAnswered}"
-                       Margin="0,15,20,8"
-                       Content="查看单词详情"
-                       FontSize="17"
-                       Command="{Binding ShowDetailCommand}"
-                       VerticalAlignment="Center" />
-               <Button HorizontalAlignment="Center"
-                       IsVisible="{Binding HasAnswered}"
-                       Margin="0,15,0,8"
-                       Content="下一题"
-                       FontSize="17"
-                       Command="{Binding UpdateCommand}"
-                       VerticalAlignment="Center" />
+            <Button HorizontalAlignment="Center"
+                    IsVisible="{Binding HasAnswered}"
+                    Margin="0,15,20,8"
+                    Content="查看单词详情"
+                    FontSize="17"
+                    Command="{Binding ShowDetailCommand}"
+                    VerticalAlignment="Center" />
+            <Button HorizontalAlignment="Center"
+                    IsVisible="{Binding HasAnswered}"
+                    Margin="0,15,0,8"
+                    Content="下一题"
+                    FontSize="17"
+                    Command="{Binding UpdateCommand}"
+                    VerticalAlignment="Center" />
         </StackPanel>
     </StackPanel>
-   
 </UserControl>
