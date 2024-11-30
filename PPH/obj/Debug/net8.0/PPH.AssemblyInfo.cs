@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PPH")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f835a13760c3a1dd125c07c4793fa6058a069ff2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9abb781f36c61cb1df79c76c62d24fb64cd40282")]
 [assembly: System.Reflection.AssemblyProductAttribute("PPH")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PPH")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
