@@ -21,7 +21,7 @@ namespace PPH.Library.Services
 
             var body = new
             {
-                model = "gpt-3.5-turbo",
+                model = "gpt-4o-mini",
                 messages = new[]
                 {
                     new { role = "system", content = "You are a helpful assistant." },

@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -20,43 +21,49 @@ namespace PPH.Library.ViewModels
 
         public string[] Languages { get; set; }
 
+        public ObservableCollection<ChatEntry> ChatEntries { get; } = new();
+
         public ChatViewModel(IChatService chatService)
         {
             _chatService = chatService;
             AskText = " ";
             ResponseText = " ";
-            SelectedLanguage = " ";
+            SelectedLanguage = "中文";
             Languages = new string[] { "中文", "英文" };
         }
 
         [RelayCommand]
         private async Task Ask()
         {
-            if (!string.IsNullOrEmpty(ResponseText))
+            if (!string.IsNullOrWhiteSpace(AskText))
             {
-                ResponseText = "";
+                var response = await _chatService.GetAIResponseAsync(AskText);
+                ChatEntries.Add(new ChatEntry { InputText = AskText, OutputText = response });
+                AskText = string.Empty;
             }
-
-            // 获取完整的响应并更新ResponseText
-            ResponseText = await _chatService.GetAIResponseAsync(AskText);
         }
 
         [RelayCommand]
         private async Task Translate()
         {
-            string skPrompt = $"""
-                               {AskText}
-
-                               将上面的输入翻译成{SelectedLanguage}，无需任何其他内容
-                               """;
-
-            if (!string.IsNullOrEmpty(ResponseText))
+            if (!string.IsNullOrWhiteSpace(AskText))
             {
-                ResponseText = "";
-            }
+                string skPrompt = $"""
+                                   {AskText}
 
-            // 获取翻译结果并更新ResponseText
-            ResponseText = await _chatService.GetAIResponseAsync(skPrompt);
+                                   将上面的输入翻译成{SelectedLanguage}，无需任何其他内容
+                                   """;
+
+                var response = await _chatService.GetAIResponseAsync(skPrompt);
+                ChatEntries.Add(new ChatEntry { InputText = AskText, OutputText = response });
+                AskText = string.Empty;
+            }
         }
+    }
+
+    public class ChatEntry
+    {
+        public string InputText { get; set; }
+        public string OutputText { get; set; }
     }
 }
