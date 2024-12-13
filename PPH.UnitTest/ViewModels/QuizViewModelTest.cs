@@ -5,7 +5,7 @@ using Moq;
 
 namespace PPH.UnitTest.ViewModels;
 
-public class WordQuizViewModelTest {
+public class QuizViewModelTest {
     [Fact]
     public async Task Update_Default() {
         var wordStorage = await WordStorageHelper.GetInitializedWordStorage();

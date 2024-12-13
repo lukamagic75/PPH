@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iKYiAyWDD2c=",
+  "dgSpecHash": "WsBb4cq8qQI=",
   "success": true,
   "projectFilePath": "C:\\Users\\yzm\\Desktop\\PPH\\PPH\\PPH.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\yzm\\.nuget\\packages\\projektanker.icons.avalonia\\9.4.1\\projektanker.icons.avalonia.9.4.1.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\projektanker.icons.avalonia.fontawesome\\9.4.1\\projektanker.icons.avalonia.fontawesome.9.4.1.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\yzm\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\semi.avalonia\\11.1.0.4\\semi.avalonia.11.1.0.4.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.8\\skiasharp.nativeassets.linux.2.88.8.nupkg.sha512",
@@ -86,7 +87,11 @@
     "C:\\Users\\yzm\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\yzm\\.nuget\\packages\\tencentcloudsdk\\3.0.1131\\tencentcloudsdk.3.0.1131.nupkg.sha512",
-    "C:\\Users\\yzm\\.nuget\\packages\\tmds.dbus.protocol\\0.16.0\\tmds.dbus.protocol.0.16.0.nupkg.sha512"
+    "C:\\Users\\yzm\\.nuget\\packages\\tmds.dbus.protocol\\0.16.0\\tmds.dbus.protocol.0.16.0.nupkg.sha512",
+    "C:\\Users\\yzm\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\yzm\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\yzm\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\yzm\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.11\\microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }

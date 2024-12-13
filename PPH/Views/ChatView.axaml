@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:PPH.Library.ViewModels;assembly=PPH.Library"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PPH.Views.ChatView"
+             DataContext="{Binding ChatViewModel, Source={StaticResource ServiceLocator}}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 控制按钮和语言选择 -->
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 20">
+            <Button Content="问AI" Command="{Binding AskCommand}" Margin="10" Padding="10,5" Background="#3498DB" Foreground="White" />
+            <Label Content="翻译为：" VerticalAlignment="Center" Margin="10,0" FontSize="16" Foreground="#3498DB" />
+            <ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Width="150" Margin="10,0" />
+            <Button Content="翻译" Command="{Binding TranslateCommand}" Margin="10" Padding="10,5" Background="#3498DB" Foreground="White" />
+        </StackPanel>
+
+        <!-- 输入文本区 -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0, 0, 10, 0">
+            <Label Content="请输入：" FontSize="16" Foreground="#3498DB" Margin="0, 0, 0, 5" />
+            <TextBox Text="{Binding AskText}" AcceptsReturn="True" TextWrapping="Wrap" FontSize="14" Margin="0, 0, 0, 10"
+                     VerticalAlignment="Stretch" Padding="10" />
+        </StackPanel>
+
+        <!-- 输出文本区 -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10, 0, 0, 0">
+            <Label Content="大模型：" FontSize="16" Foreground="#3498DB" Margin="0, 0, 0, 5" />
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBlock Text="{Binding ResponseText}" TextWrapping="Wrap" FontSize="14" Margin="0, 0, 0, 10"
+                           Background="Lavender" VerticalAlignment="Stretch" Padding="10" />
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</UserControl>

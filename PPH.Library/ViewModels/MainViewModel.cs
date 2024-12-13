@@ -113,10 +113,13 @@ public class MenuItem {
     private static MenuItem WeatherView => 
         new() { Name = "天气预报", View = MenuNavigationConstant.WeatherView };
     
+    private static MenuItem ChatView => 
+        new() { Name = "AI助手", View = MenuNavigationConstant.ChatView };
+    
     public static IEnumerable<MenuItem> MenuItems { get; } = [
         TodayWordView, TranslateView, 
         QueryWordView, FavoriteWordView, 
         QuizView, MemoView,
-        WeatherView
+        WeatherView, ChatView
     ];
 }

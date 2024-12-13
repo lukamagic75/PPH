@@ -28,10 +28,10 @@ namespace PPH.UnitTest.ViewModels
             Assert.Equal("早上好！", translateViewModel.TargetText); // 断言翻译结果是否正确
 
             // 测试翻译功能 - 中文翻译为英语
-            translateViewModel.SourceText = "早上好！";
+            translateViewModel.SourceText = "苹果";
             translateViewModel.LanguageType = TargetLanguageType.ToEnglishType;
             await translateViewModel.TranslateAsync();
-            Assert.Equal("Good morning!", translateViewModel.TargetText); // 断言翻译结果是否正确
+            Assert.Equal("apple", translateViewModel.TargetText); // 断言翻译结果是否正确
         }
     }
 }

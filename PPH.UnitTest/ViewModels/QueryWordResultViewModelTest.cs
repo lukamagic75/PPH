@@ -7,9 +7,9 @@ using Moq;
 
 namespace PPH.UnitTest.ViewModels;
 
-public class WordQueryResultViewModelTest : IDisposable
+public class QueryWordResultViewModelTest : IDisposable
 {
-    public WordQueryResultViewModelTest() =>
+    public QueryWordResultViewModelTest() =>
         WordStorageHelper.RemoveDatabaseFile();
 
     public void Dispose() => WordStorageHelper.RemoveDatabaseFile();

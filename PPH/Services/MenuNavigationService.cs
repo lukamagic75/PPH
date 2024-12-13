@@ -21,6 +21,8 @@ public class MenuNavigationService : IMenuNavigationService {
                 MemoViewModel,
             MenuNavigationConstant.WeatherView => ServiceLocator.Current.
                 WeatherViewModel,
+            MenuNavigationConstant.ChatView => ServiceLocator.Current.
+                ChatViewModel,
             _ => throw new Exception("未知的视图。")
         };
 

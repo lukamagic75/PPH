@@ -34,7 +34,7 @@
         <StackPanel IsVisible="{Binding SelectedMode, 
                                      Converter={StaticResource EqualStringToBoolConverter}, ConverterParameter='解释选择'}"
                     HorizontalAlignment="Center">
-            <Label Content="英文选义"
+            <Label Content="解释选择"
                    HorizontalAlignment="Center"
                    Foreground="#3498DB"
                    FontSize="22"

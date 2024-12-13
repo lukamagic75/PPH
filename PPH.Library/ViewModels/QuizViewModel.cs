@@ -24,20 +24,19 @@ public class QuizViewModel : ViewModelBase {
         Update();
     }
     
-    // 正确答案对应的单词
     private ObjectWord _correctWord;
     public ObjectWord CorrectWord {
         get => _correctWord;
         set => SetProperty(ref _correctWord, value);
     }
     
-    // 可选择的四个选项
+    
     public ObservableRangeCollection<ObjectWord> QuizOptions { get; } = new();
 
     public static ObservableRangeCollection<string> QuizModes { get; } 
         = ["解释选择", "中文选词"];
     
-    private string _selectedMode = QuizModes[0]; // 默认为英文选义模式
+    private string _selectedMode = QuizModes[0]; 
     public string SelectedMode {
         get => _selectedMode;
         private set => SetProperty(ref _selectedMode, value);

@@ -68,9 +68,11 @@ public class ServiceLocator {
     public MemoViewModel MemoViewModel => 
         _serviceProvider.GetRequiredService<MemoViewModel>();
     
-    
     public WeatherViewModel WeatherViewModel => 
         _serviceProvider.GetRequiredService<WeatherViewModel>();
+    
+    public ChatViewModel ChatViewModel => 
+        _serviceProvider.GetRequiredService<ChatViewModel>();
     
     public ServiceLocator() {
         var serviceCollection = new ServiceCollection();
@@ -86,6 +88,7 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<ITodayImageStorage, TodayImageStorage>();
         serviceCollection.AddSingleton<IFavoriteWordStorage, FavoriteWordStorage>();
         serviceCollection.AddSingleton<IMemoStorage, MemoStorage>();
+        serviceCollection.AddSingleton<IChatService, ChatService>();
         
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<TodayWordViewModel>();
@@ -97,7 +100,7 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<QueryWordResultViewModel>();
         serviceCollection.AddSingleton<FavoriteWordViewModel>();
         serviceCollection.AddSingleton<QuizViewModel>();
-        
+        serviceCollection.AddSingleton<ChatViewModel>();
         serviceCollection.AddSingleton<WeatherViewModel>();
         serviceCollection.AddSingleton<IWeatherService, WeatherService>();
         serviceCollection.AddSingleton<MemoViewModel>();

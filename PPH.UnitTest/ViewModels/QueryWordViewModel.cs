@@ -78,11 +78,11 @@ namespace PPH.UnitTest.ViewModels
             var viewModel = new QueryWordViewModel(contentNavigationServiceMock.Object);
 
             // 设置传入的 QueryWord 参数
-            var queryWord = new QueryWord { Word = "test", CnMeaning = "测试" };
+            var queryWord = new QueryWord { Word = "apple", CnMeaning = "苹果" };
             viewModel.SetParameter(queryWord);
 
             // 断言 Filter 的 QueryText 被正确设置
-            Assert.Equal("test", viewModel.Filter.QueryText);
+            Assert.Equal("apple", viewModel.Filter.QueryText);
             Assert.Equal(FilterType.EnglishWordFilter, viewModel.Filter.Type);
         }
 
