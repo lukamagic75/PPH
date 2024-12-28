@@ -116,10 +116,14 @@ public class MenuItem {
     private static MenuItem ChatView => 
         new() { Name = "AI助手", View = MenuNavigationConstant.ChatView };
     
+    private static MenuItem MusicPlayerView => 
+        new() { Name = "音乐播放", View = MenuNavigationConstant.MusicPlayerView };
+    
     public static IEnumerable<MenuItem> MenuItems { get; } = [
         TodayWordView, TranslateView, 
         QueryWordView, FavoriteWordView, 
         QuizView, MemoView,
-        WeatherView, ChatView
+        MusicPlayerView,ChatView
+        
     ];
 }

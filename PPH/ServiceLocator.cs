@@ -74,6 +74,9 @@ public class ServiceLocator {
     public ChatViewModel ChatViewModel => 
         _serviceProvider.GetRequiredService<ChatViewModel>();
     
+    public MusicPlayerViewModel MusicPlayerViewModel => 
+        _serviceProvider.GetRequiredService<MusicPlayerViewModel>();
+    
     public ServiceLocator() {
         var serviceCollection = new ServiceCollection();
 
@@ -89,6 +92,8 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<IFavoriteWordStorage, FavoriteWordStorage>();
         serviceCollection.AddSingleton<IMemoStorage, MemoStorage>();
         serviceCollection.AddSingleton<IChatService, ChatService>();
+        serviceCollection.AddSingleton<IMusicPlayer, MusicPlayer>();
+        serviceCollection.AddSingleton<IMusicStorage, MusicStorage>();
         
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<TodayWordViewModel>();
@@ -104,7 +109,8 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<WeatherViewModel>();
         serviceCollection.AddSingleton<IWeatherService, WeatherService>();
         serviceCollection.AddSingleton<MemoViewModel>();
-
+        serviceCollection.AddSingleton<MusicPlayerViewModel>();
+        
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }
     

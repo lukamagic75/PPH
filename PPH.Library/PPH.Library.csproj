@@ -11,9 +11,11 @@
         <PackageReference Include="AvaloniaInfiniteScrolling.Collection" Version="1.0.1" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
         <PackageReference Include="Google.Cloud.Translate.V3" Version="3.9.0" />
+        <PackageReference Include="NAudio" Version="2.2.1" />
         <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
         <PackageReference Include="RestSharp" Version="112.1.0" />
         <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+        <PackageReference Include="TagLibSharp" Version="2.3.0" />
         <PackageReference Include="TencentCloudSDK" Version="3.0.1131" />
     </ItemGroup>
 

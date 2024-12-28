@@ -23,6 +23,8 @@ public class MenuNavigationService : IMenuNavigationService {
                 WeatherViewModel,
             MenuNavigationConstant.ChatView => ServiceLocator.Current.
                 ChatViewModel,
+            MenuNavigationConstant.MusicPlayerView => ServiceLocator.Current.
+                MusicPlayerViewModel,
             _ => throw new Exception("未知的视图。")
         };
 

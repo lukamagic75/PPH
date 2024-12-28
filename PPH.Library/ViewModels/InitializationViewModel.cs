@@ -7,15 +7,18 @@ namespace PPH.Library.ViewModels;
 public class InitializationViewModel : ViewModelBase {
     private readonly IWordStorage _wordStorage;
     private readonly IMemoStorage _memoStorage;
+    private readonly IMusicStorage _musicStorage;
     private readonly IRootNavigationService _rootNavigationService;
     private readonly IFavoriteWordStorage _favoriteWordStorage;
 
     public InitializationViewModel(IWordStorage wordStorage, 
         IMemoStorage memoStorage,
+        IMusicStorage musicStorage,
         IRootNavigationService rootNavigationService,
         IFavoriteWordStorage favoriteWordStorage) {
         _wordStorage = wordStorage;
         _memoStorage = memoStorage;
+        _musicStorage = musicStorage;
         _rootNavigationService = rootNavigationService;
         _favoriteWordStorage = favoriteWordStorage;
         
@@ -35,6 +38,10 @@ public class InitializationViewModel : ViewModelBase {
         
         if (!_memoStorage.IsInitialized) {
             await _memoStorage.InitializeAsync();
+        }
+        
+        if (!_musicStorage.IsInitialized) {
+            await _musicStorage.InitializeAsync();
         }
 
         await Task.Delay(3000);

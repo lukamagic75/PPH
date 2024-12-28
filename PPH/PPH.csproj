@@ -44,5 +44,85 @@
         <DependentUpon>AIView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+=======
+      <UpToDateCheckInput Remove="Assets\Assets\1.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\avalonia-logo.ico" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\100.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\101.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\102.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\103.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\104.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\150.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\151.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\153.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\154.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\300.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\301.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\302.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\303.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\304.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\305.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\306.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\307.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\308.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\309.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\310.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\311.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\312.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\313.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\314.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\315.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\316.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\317.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\318.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\350.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\351.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\399.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\400.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\401.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\402.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\403.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\404.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\405.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\406.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\407.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\408.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\409.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\410.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\456.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\457.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\499.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\500.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\501.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\502.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\503.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\504.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\507.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\508.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\509.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\510.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\511.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\512.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\513.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\514.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\515.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\900.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\901.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\999.png" />
+      <UpToDateCheckInput Remove="Assets\Assets\QWeatherIcons\icons\LICENSE" />
+      <UpToDateCheckInput Remove="Assets\Assets\weather_background6.png" />
+      <UpToDateCheckInput Remove="Assets\avalonia-logo.ico" />
+>>>>>>> refs/remotes/origin/HJC
+    </ItemGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Assets/QWeatherIcons/icons/*.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\ChatView.axaml.cs">
+        <DependentUpon>AIView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 </Project>

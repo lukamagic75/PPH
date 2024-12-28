@@ -13,18 +13,7 @@ public interface IMemoStorage {
     // 初始化数据库（用于首次加载）
     Task InitializeAsync();
 
-    // 首次运行时初始化数据
-    Task InitializeAsyncForFirstTime(IEnumerable<MemoObject> initialData);
-
-    // 根据 ID 获取备忘录
-    Task<MemoObject> GetMemoAsync(int id);
-
-    // 获取随机备忘录
-    Task<MemoObject> GetRandomMemoAsync();
-
-    // 根据条件查询备忘录
-    Task<IList<MemoObject>> GetMemosAsync(Expression<Func<MemoObject, bool>> where, int skip, int take);
-
+    
     // 获取指定日期的备忘录
     Task<IList<MemoObject>> GetMemosByDateAsync(DateTime date);
 
@@ -34,6 +23,5 @@ public interface IMemoStorage {
     // 删除备忘录
     Task DeleteMemoAsync(int id);
 
-    // 关闭数据库连接
-    Task CloseAsync();
+    
 }

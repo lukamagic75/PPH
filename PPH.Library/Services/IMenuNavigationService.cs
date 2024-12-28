@@ -20,4 +20,6 @@ public static class MenuNavigationConstant {
     public const string WeatherView= nameof(WeatherView);//天气预报
     
     public const string ChatView = nameof(ChatView);
+    
+    public const string MusicPlayerView= nameof(MusicPlayerView);//音乐播放
 }
