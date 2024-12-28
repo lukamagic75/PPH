@@ -1,89 +1,105 @@
-using PPH.Library.Models;
-using PPH.Library.Services;
-using Moq;
 using System;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Moq;
+using Moq.Protected;
 using Xunit;
+using PPH.Library.Services;
+using PPH.Library.Models;
 
-namespace PPH.UnitTest.Services
+public class BingImageServiceTests
 {
-    public class BingImageServiceTest
+    private readonly Mock<IAlertService> _alertServiceMock;
+    private readonly Mock<ITodayImageStorage> _todayImageStorageMock;
+    private readonly HttpClient _httpClient;
+    private readonly BingImageService _bingImageService;
+
+    public BingImageServiceTests()
     {
-        [Fact(Skip = "依赖远程服务的测试")]
-        public async Task CheckUpdateAsync_TodayImageNotExpired()
-        {
-            var todayImageToReturn = new TodayImage
+        _alertServiceMock = new Mock<IAlertService>();
+        _todayImageStorageMock = new Mock<ITodayImageStorage>();
+        
+        var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
+        handlerMock.Protected()
+            .Setup<Task<HttpResponseMessage>>("SendAsync", 
+                ItExpr.IsAny<HttpRequestMessage>(), 
+                ItExpr.IsAny<CancellationToken>())
+            .ReturnsAsync(new HttpResponseMessage
             {
-                FullStartDate = "19700101",
-                ExpiresAt = DateTime.Now + TimeSpan.FromHours(1), // 设置当前未过期
-                Copyright = "Copyright",
-                CopyrightLink = "Today's image"
-            };
+                StatusCode = HttpStatusCode.OK,
+                Content = new StringContent("{\"images\":[{\"startdate\":\"20231010\",\"url\":\"/image.png\",\"copyright\":\"Copyright Text\",\"title\":\"Image Title\"}]}")
+            });
 
-            var todayImageStorageMock = new Mock<ITodayImageStorage>();
-            todayImageStorageMock.Setup(p => p.GetTodayImageAsync(false))
-                .ReturnsAsync(todayImageToReturn);
-            var mockTodayImageStorage = todayImageStorageMock.Object;
-
-            var alertServiceMock = new Mock<IAlertService>();
-            var mockAlertService = alertServiceMock.Object;
-
-            var todayImageService = new BingImageService(mockAlertService, mockTodayImageStorage);
-            var checkUpdateResult = await todayImageService.CheckUpdateAsync();
-
-            // 验证结果：应该没有更新
-            Assert.False(checkUpdateResult.HasUpdate);
-
-            // 验证 GetTodayImageAsync 被调用了一次
-            todayImageStorageMock.Verify(p => p.GetTodayImageAsync(false), Times.Once);
-
-            // 验证没有调用 SaveTodayImageAsync
-            todayImageStorageMock.Verify(
-                p => p.SaveTodayImageAsync(It.IsAny<TodayImage>(), It.IsAny<bool>()), Times.Never);
-
-            // 验证没有弹出警告
-            alertServiceMock.Verify(
-                p => p.AlertAsync(It.IsAny<string>(), It.IsAny<string>()),
-                Times.Never);
-        }
-
-        [Fact(Skip = "依赖远程服务的测试")]
-        public async Task CheckUpdateAsync_TodayImageExpired()
+        _httpClient = new HttpClient(handlerMock.Object)
         {
-            var todayImageToReturn = new TodayImage
-            {
-                FullStartDate = "19700101",
-                ExpiresAt = DateTime.Now + TimeSpan.FromHours(1), // 设置当前未过期
-                Copyright = "Copyright",
-                CopyrightLink = "Today's image"
-            };
+            BaseAddress = new Uri("https://www.bing.com/")
+        };
 
-            var todayImageStorageMock = new Mock<ITodayImageStorage>();
-            todayImageStorageMock.Setup(p => p.GetTodayImageAsync(false))
-                .ReturnsAsync(todayImageToReturn);
-            var mockTodayImageStorage = todayImageStorageMock.Object;
-
-            var alertServiceMock = new Mock<IAlertService>();
-            var mockAlertService = alertServiceMock.Object;
-
-            var todayImageService = new BingImageService(mockAlertService, mockTodayImageStorage);
-            var checkUpdateResult = await todayImageService.CheckUpdateAsync();
-
-            // 验证结果：应该有更新
-            Assert.True(checkUpdateResult.HasUpdate);
-
-            // 验证 GetTodayImageAsync 被调用了一次
-            todayImageStorageMock.Verify(p => p.GetTodayImageAsync(false), Times.Once);
-
-            // 验证 SaveTodayImageAsync 被调用一次，保存新的 TodayImage
-            todayImageStorageMock.Verify(
-                p => p.SaveTodayImageAsync(checkUpdateResult.TodayImage, false),
-                Times.Once);
-
-            // 验证没有弹出警告
-            alertServiceMock.Verify(
-                p => p.AlertAsync(It.IsAny<string>(), It.IsAny<string>()),
-                Times.Never);
-        }
+        _bingImageService = new BingImageService(_alertServiceMock.Object, _todayImageStorageMock.Object);
     }
+
+    [Fact]
+    public async Task GetTodayImageAsync_ReturnsImage()
+    {
+        // Arrange
+        var expectedImage = new TodayImage { FullStartDate = "20231010" };
+        _todayImageStorageMock
+            .Setup(storage => storage.GetTodayImageAsync(It.IsAny<bool>()))
+            .ReturnsAsync(expectedImage);
+
+        // Act
+        var result = await _bingImageService.GetTodayImageAsync();
+
+        // Assert
+        Assert.Equal(expectedImage.FullStartDate, result.FullStartDate);
+    }
+
+    [Fact]
+    public async Task CheckUpdateAsync_ReturnsHasUpdateFalse_WhenNotExpired()
+    {
+        // Arrange
+        var todayImage = new TodayImage
+        {
+            ExpiresAt = DateTime.Now.AddHours(1)
+        };
+        
+        _todayImageStorageMock
+            .Setup(storage => storage.GetTodayImageAsync(It.IsAny<bool>()))
+            .ReturnsAsync(todayImage);
+
+        // Act
+        var result = await _bingImageService.CheckUpdateAsync();
+
+        // Assert
+        Assert.False(result.HasUpdate);
+    }
+
+    [Fact]
+    public async Task CheckUpdateAsync_ReturnsHasUpdateTrue_WhenUpdated()
+    {
+        // Arrange
+        var todayImage = new TodayImage
+        {
+            ExpiresAt = DateTime.Now.AddHours(-1),
+            FullStartDate = "20230910"
+        };
+
+        _todayImageStorageMock
+            .Setup(storage => storage.GetTodayImageAsync(It.IsAny<bool>()))
+            .ReturnsAsync(todayImage);
+
+        _todayImageStorageMock
+            .Setup(storage => storage.SaveTodayImageAsync(It.IsAny<TodayImage>(), It.IsAny<bool>()))
+            .Returns(Task.CompletedTask);
+
+        // Act
+        var result = await _bingImageService.CheckUpdateAsync();
+
+        // Assert
+        Assert.True(result.HasUpdate);
+        Assert.NotNull(result.TodayImage);
+    }
+
+    // Add more tests for GetRandomImageAsync and other scenarios...
 }

@@ -710,3 +710,10 @@ C:\Users\yzm\Desktop\PPH\PPH\obj\Debug\net8.0\PPH.csproj.Up2Date
 C:\Users\yzm\Desktop\PPH\PPH\obj\Debug\net8.0\PPH.genruntimeconfig.cache
 C:\Users\yzm\Desktop\PPH\PPH\obj\Debug\net8.0\ref\PPH.dll
 C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\RestSharp.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.Asio.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.Core.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.Midi.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.Wasapi.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\NAudio.WinMM.dll
+C:\Users\yzm\Desktop\PPH\PPH\bin\Debug\net8.0\TagLibSharp.dll

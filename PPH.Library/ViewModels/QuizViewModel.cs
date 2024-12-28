@@ -16,9 +16,9 @@ public class QuizViewModel : ViewModelBase {
         _contentNavigationService = contentNavigationService;
         
         UpdateCommand = new RelayCommand(Update);
-        //CommitCommand = new RelayCommand(Commit);
+        CommitCommand = new RelayCommand(Commit);
         RadioCheckedCommand = new RelayCommand<ObjectWord>(RadioChecked);
-        //SelectModeCommand = new RelayCommand<string>(SelectMode);
+        SelectModeCommand = new RelayCommand<string>(SelectMode);
         ShowDetailCommand = new RelayCommand(ShowDetail);
         
         Update();
@@ -42,30 +42,30 @@ public class QuizViewModel : ViewModelBase {
         private set => SetProperty(ref _selectedMode, value);
     }
     
-    // public ICommand SelectModeCommand { get; }
-    // private void SelectMode(string mode) {
-    //     if (mode == QuizModes[0] || mode == QuizModes[1]) {
-    //         SelectedMode = mode;
-    //         Update();
-    //     }
-    // }
+    public ICommand SelectModeCommand { get; }
+    private void SelectMode(string mode) {
+        if (mode == QuizModes[0] || mode == QuizModes[1]) {
+            SelectedMode = mode;
+            Update();
+        }
+    }
 
-    // private string _resultText;
-    // public string ResultText {
-    //     get => _resultText;
-    //     set => SetProperty(ref _resultText, value);
-    // }
+    private string _resultText;
+    public string ResultText {
+        get => _resultText;
+        set => SetProperty(ref _resultText, value);
+    }
     
     
     private bool _hasAnswered; //已提交答案
     public bool HasAnswered {
-        //get => _hasAnswered;
+        get => _hasAnswered;
         set => SetProperty(ref _hasAnswered, value);
     }
     
     private bool _hasSelected; //已选择某一选项
     public bool HasSelected {
-        //get => _hasSelected;
+        get => _hasSelected;
         set => SetProperty(ref _hasSelected, value);
     }
     
@@ -76,7 +76,7 @@ public class QuizViewModel : ViewModelBase {
     }
     
     public bool IsLoading {
-        //get => _isLoading;
+        get => _isLoading;
         set => SetProperty(ref _isLoading, value);
     }
     private bool _isLoading;
@@ -107,17 +107,17 @@ public class QuizViewModel : ViewModelBase {
         SelectedOption = selectedWordObject;
     }
     
-    // 用户点击提交按钮
-    // public ICommand CommitCommand { get; }
-    // private void Commit() {
-    //     if (SelectedOption.Word == CorrectWord.Word) {
-    //         ResultText = "恭喜您回答正确！";
-    //     }
-    //     else {
-    //         ResultText = "很遗憾，回答错误啦~";
-    //     }
-    //     HasAnswered = true;
-    // }
+    
+    public ICommand CommitCommand { get; }
+    private void Commit() {
+        if (SelectedOption.Word == CorrectWord.Word) {
+            ResultText = "恭喜您回答正确！";
+        }
+        else {
+            ResultText = "很遗憾，回答错误啦~";
+        }
+        HasAnswered = true;
+    }
 
     // 跳转至单词详情页
     public ICommand ShowDetailCommand { get; }

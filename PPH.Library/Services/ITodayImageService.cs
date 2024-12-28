@@ -2,7 +2,9 @@ using PPH.Library.Models;
 
 namespace PPH.Library.Services;
 
-public interface ITodayImageService {
+public interface 
+    
+    ITodayImageService {
     Task<TodayImage> GetTodayImageAsync(); 
     
     Task<TodayImageServiceCheckUpdateResult> CheckUpdateAsync();

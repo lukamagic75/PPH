@@ -35,7 +35,7 @@ public class MusicPlayerViewModel : ViewModelBase {
     
     private async void InitializeAsync() {
         //var pathFile = "/Users/jiachenghuang/Desktop/PPH/PPH.Library/MusicPaths.txt";
-        var pathFile = @"\\Mac\Home\Desktop\PPH\PPH.Library\MusicPaths.txt";
+        var pathFile = "C:\\Users\\yzm\\Desktop\\PPH\\PPH.Library\\MusicPaths.txt";
         
         
         if (File.Exists(pathFile))
