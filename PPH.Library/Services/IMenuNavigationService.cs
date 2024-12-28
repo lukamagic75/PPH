@@ -16,4 +16,6 @@ public static class MenuNavigationConstant {
     public const string QuizView = nameof(QuizView); 
     
     public const string MemoView = nameof(MemoView);
+    
+    public const string MusicPlayerView= nameof(MusicPlayerView);//音乐播放
 }

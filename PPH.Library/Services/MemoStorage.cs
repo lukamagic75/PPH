@@ -12,7 +12,7 @@ public class MemoStorage : IMemoStorage
 {
     private const string DbName = "memosdb.sqlite3";
 
-    private static readonly string MemoDbPath = Path.Combine(
+    public static readonly string MemoDbPath = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
         DbName);
 
@@ -28,22 +28,7 @@ public class MemoStorage : IMemoStorage
         await Connection.CreateTableAsync<MemoObject>();
         Console.WriteLine("数据库表已创建或已存在。");
     }
-
-    public Task InitializeAsyncForFirstTime(IEnumerable<MemoObject> initialData) {
-        throw new NotImplementedException();
-    }
-
-    public Task<MemoObject> GetMemoAsync(int id) {
-        throw new NotImplementedException();
-    }
-
-    public Task<MemoObject> GetRandomMemoAsync() {
-        throw new NotImplementedException();
-    }
-
-    public Task<IList<MemoObject>> GetMemosAsync(Expression<Func<MemoObject, bool>> where, int skip, int take) {
-        throw new NotImplementedException();
-    }
+    
 
     public async Task SaveMemoAsync(MemoObject memoObject) {
         if (memoObject == null) throw new ArgumentNullException(nameof(memoObject));
@@ -60,10 +45,6 @@ public class MemoStorage : IMemoStorage
         }
     }
     
-
-    public Task CloseAsync() {
-        throw new NotImplementedException();
-    }
 
     public async Task<IList<MemoObject>> GetMemosByDateAsync(DateTime date) {
         var dateString = DateHelper.ToDateString(date); // 转换查询日期为字符串

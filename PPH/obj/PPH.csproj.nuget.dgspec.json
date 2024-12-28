@@ -59,9 +59,17 @@
               "target": "Package",
               "version": "[3.9.0, )"
             },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
             "Refractored.MvvmHelpers": {
               "target": "Package",
               "version": "[1.6.2, )"
+            },
+            "TagLibSharp": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "TencentCloudSDK": {
               "target": "Package",

@@ -41,6 +41,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/jiachenghuang/Desktop/PPH/PPH/Views/MemoView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/jiachenghuang/Desktop/PPH/PPH/Views/MusicPlayerView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/jiachenghuang/Desktop/PPH/PPH/Views/QueryWordResultView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

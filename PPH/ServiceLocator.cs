@@ -68,6 +68,9 @@ public class ServiceLocator {
     public MemoViewModel MemoViewModel => 
         _serviceProvider.GetRequiredService<MemoViewModel>();
     
+    public MusicPlayerViewModel MusicPlayerViewModel => 
+        _serviceProvider.GetRequiredService<MusicPlayerViewModel>();
+    
     public ServiceLocator() {
         var serviceCollection = new ServiceCollection();
 
@@ -82,6 +85,8 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<ITodayImageStorage, TodayImageStorage>();
         serviceCollection.AddSingleton<IFavoriteWordStorage, FavoriteWordStorage>();
         serviceCollection.AddSingleton<IMemoStorage, MemoStorage>();
+        serviceCollection.AddSingleton<IMusicPlayer, MusicPlayer>();
+        serviceCollection.AddSingleton<IMusicStorage, MusicStorage>();
         
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<TodayWordViewModel>();
@@ -94,7 +99,8 @@ public class ServiceLocator {
         serviceCollection.AddSingleton<FavoriteWordViewModel>();
         serviceCollection.AddSingleton<QuizViewModel>();
         serviceCollection.AddSingleton<MemoViewModel>();
-
+        serviceCollection.AddSingleton<MusicPlayerViewModel>();
+        
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }
     

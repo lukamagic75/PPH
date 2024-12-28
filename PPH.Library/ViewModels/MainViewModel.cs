@@ -110,9 +110,13 @@ public class MenuItem {
     private static MenuItem MemoView =>
         new() { Name = "备忘录", View = MenuNavigationConstant.MemoView };
     
+    private static MenuItem MusicPlayerView => 
+        new() { Name = "音乐播放", View = MenuNavigationConstant.MusicPlayerView };
+    
     public static IEnumerable<MenuItem> MenuItems { get; } = [
         TodayWordView, TranslateView, 
         QueryWordView, FavoriteWordView, 
-        QuizView, MemoView
+        QuizView, MemoView,
+        MusicPlayerView
     ];
 }
